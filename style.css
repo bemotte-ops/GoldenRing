@@ -1,0 +1,111 @@
+:root {
+  --bg: #f9f7f0;
+  --text: #2c1810;
+  --accent: #b38b59;
+  --church: #5a7d9a;
+  --museum: #a65e4a;
+  --monastery: #5f8c5a;
+  --card-bg: #fff8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2c3e50, #5a7d9a);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+section {
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--text);
+}
+
+.map-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+#map {
+  height: 400px;
+  border-radius: 8px;
+  z-index: 0;
+  width: 100%;
+}
+
+.itinerary .day {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.places {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.place {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+.place img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.church { border-left: 4px solid var(--church); }
+.museum { border-left: 4px solid var(--museum); }
+.monastery { border-left: 4px solid var(--monastery); }
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-style: italic;
+  color: #555;
+  background: var(--card-bg);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.8rem; }
+  .places { gap: 0.8rem; }
+}

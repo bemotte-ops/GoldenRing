@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex" />
+  <title>Золотое Кольцо за 3 дня — Зимний маршрут</title>
+  <!-- Yandex Maps API -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=313b0c8b-b4e1-43e7-90da-e8a5b9592fde&lang=ru_RU" type="text/javascript"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Золотое Кольцо за 3 дня в декабре</h1>
+    <p>Духовность • Музеи • Уют • Зимняя атмосфера</p>
+  </header>
+
+  <section class="intro">
+    <h2>О маршруте</h2>
+    <p>Оптимизированный маршрут на 2 ночи и 3 дня с фокусом на храмы, монастыри и музеи — с учётом короткого светового дня и зимней погоды.</p>
+  </section>
+
+  <section class="map-container">
+    <h2>Интерактивная карта</h2>
+    <div id="map"></div>
+  </section>
+
+  <section class="itinerary">
+    <h2>Подробный маршрут</h2>
+
+    <div class="day">
+      <h3>День 1: Сергиев Посад → Переславль → Ростов Великий</h3>
+      <div class="places">
+        <div class="place monastery">
+          <img src="assets/icons/monastery.svg" alt="Монастырь" />
+          <div><strong>Троице-Сергиева Лавра</strong> (Сергиев Посад)</div>
+        </div>
+        <div class="place church">
+          <img src="assets/icons/church.svg" alt="Храм" />
+          <div><strong>Спасо-Преображенский собор</strong> (Переславль)</div>
+        </div>
+        <div class="place museum">
+          <img src="assets/icons/museum.svg" alt="Музей" />
+          <div><strong>Ростовский кремль</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <h3>День 2: Ярославль → Кострома → Иваново → Суздаль</h3>
+      <div class="places">
+        <div class="place monastery">
+          <img src="assets/icons/monastery.svg" alt="Монастырь" />
+          <div><strong>Спасо-Преображенский монастырь</strong> (Ярославль)</div>
+        </div>
+        <div class="place monastery">
+          <img src="assets/icons/monastery.svg" alt="Монастырь" />
+          <div><strong>Ипатьевский монастырь</strong> (Кострома)</div>
+        </div>
+        <div class="place museum">
+          <img src="assets/icons/museum.svg" alt="Музей" />
+          <div><strong>Арт-галерея «Классика»</strong> (Иваново)</div>
+        </div>
+        <div class="place church">
+          <img src="assets/icons/church.svg" alt="Храм" />
+          <div>Ночёвка в <strong>Суздале</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <h3>День 3: Суздаль</h3>
+      <div class="places">
+        <div class="place monastery">
+          <img src="assets/icons/monastery.svg" alt="Монастырь" />
+          <div><strong>Спасо-Евфимиев монастырь</strong></div>
+        </div>
+        <div class="place museum">
+          <img src="assets/icons/museum.svg" alt="Музей" />
+          <div><strong>Музей деревянного зодчества</strong> (посетить утром)</div>
+        </div>
+        <div class="place church">
+          <img src="assets/icons/church.svg" alt="Храм" />
+          <div><strong>Суздальский Кремль</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Маршрут составлен для зимнего посещения. В декабре дни короткие — планируйте посещения до 16:00.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
