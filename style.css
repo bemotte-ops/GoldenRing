@@ -90,7 +90,7 @@ h2 {
   margin: 1rem 0;
 }
 
-/* Универсальная карточка с фоновой картинкой */
+/* Универсальная карточка */
 .place,
 .choice-option {
   background: white;
@@ -100,12 +100,12 @@ h2 {
   box-shadow: 0 6px 18px var(--shadow);
   display: flex;
   flex-direction: column;
+  height: 400px; /* фиксированная высота для контроля пропорций */
 }
 
 .place-image,
 .choice-image {
-  height: 70%;
-  min-height: 180px;
+  height: 80%; /* ← 80% под изображение */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,8 +113,9 @@ h2 {
 
 .place-info,
 .choice-info {
-  padding: 1.4rem;
-  flex-grow: 1;
+  height: 20%; /* ← 20% под текст */
+  padding: 1rem 1.4rem;
+  overflow-y: auto; /* если текст не влезает */
 }
 
 .place h3,
@@ -248,35 +249,37 @@ footer {
   border-top: 1px solid #e0e8f0;
 }
 
-/* Мобильная адаптация */
 @media (max-width: 768px) {
   .hero {
     padding: 1.5rem 1rem 1rem;
   }
-.logo-container {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.logo {
-  width: 240px;
-  height: auto; /* сохраняет исходные пропорции */
-  max-width: 100%;
-  display: inline-block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-}
   h2 {
     font-size: 2rem;
   }
   #map {
     height: 400px;
   }
-  .place-image,
-  .choice-image {
-    min-height: 160px;
-  }
   .choice-row {
     padding: 0 0.8rem;
   }
-}
 
+  /* Адаптация карточек */
+  .place,
+  .choice-option {
+    height: 360px;
+  }
+  .place-image,
+  .choice-image {
+    height: 75%;
+  }
+  .place-info,
+  .choice-info {
+    height: 25%;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .place h3,
+  .choice-option h4 {
+    font-size: 1.4rem;
+  }
+}
