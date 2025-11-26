@@ -1,12 +1,11 @@
 :root {
-  --bg: #f0f7fc;               /* фон страницы — нежно-голубой */
+  --bg: #f0f7fc;               /* нежно-голубой фон страницы */
   --text: #2a2d3a;             /* тёмно-синий текст */
   --accent: #3a7ca5;           /* насыщенный сине-голубой акцент */
-  --card-bg: #ffffff;          /* карточки — белые для контраста */
-  --meal-bg: #e6f1f8;          /* обеды — мягкий голубой */
-  --stay-bg: #dbe9f4;          /* ночёвки — чуть насыщеннее */
+  --card-bg: #ffffff;          /* карточки — белые */
+  --meal-bg: #e6f1f8;          /* обеды */
+  --stay-bg: #dbe9f4;          /* ночёвки */
   --shadow: rgba(58, 124, 165, 0.12); /* тень с синевой */
-  --hero-text: #ffffff;        /* текст заголовка — белый */
   --hero-overlay: rgba(42, 64, 92, 0.55); /* оверлей на фон */
 }
 
@@ -30,22 +29,13 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+/* Hero — только логотип */
 .hero {
   position: relative;
   text-align: center;
-  padding: 4.5rem 1.5rem 3.5rem;
+  padding: 2rem 1.5rem 1.5rem;
   overflow: hidden;
-  color: var(--hero-text);
   z-index: 2;
-}
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Rostov_Kremlin_Winter.jpg/1200px-Rostov_Kremlin_Winter.jpg') center/cover no-repeat;
-  z-index: -2;
 }
 .hero::before {
   content: '';
@@ -57,13 +47,18 @@ h1, h2, h3, h4 {
   background: var(--hero-overlay);
   z-index: -1;
 }
-.hero h1 {
-  font-size: 4rem;
-  letter-spacing: 1px;
-  margin: 0;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+
+.logo-container {
+  text-align: center;
+}
+.logo {
+  width: 240px;
+  height: auto;
+  max-height: 160px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
 }
 
+/* Вводный текст */
 .intro {
   max-width: 800px;
   margin: 2rem auto;
@@ -74,6 +69,7 @@ h1, h2, h3, h4 {
   color: #5a4a42;
 }
 
+/* Общие секции */
 section {
   max-width: 1000px;
   margin: 2.5rem auto;
@@ -94,51 +90,75 @@ h2 {
   margin: 1rem 0;
 }
 
-.place {
-  background: var(--card-bg);
+/* Универсальная карточка с фоновой картинкой */
+.place,
+.choice-option {
+  background: white;
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 2rem;
   box-shadow: 0 6px 18px var(--shadow);
+  display: flex;
+  flex-direction: column;
 }
-.place img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+
+.place-image,
+.choice-image {
+  height: 70%;
+  min-height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.place-info {
+
+.place-info,
+.choice-info {
   padding: 1.4rem;
+  flex-grow: 1;
 }
-.place-info h3 {
-  font-size: 1.8rem;
+
+.place h3,
+.choice-option h4 {
+  font-size: 1.6rem;
   margin-bottom: 0.8rem;
   color: var(--text);
 }
+
 .details {
   margin-top: 0.8rem;
   font-weight: 600;
   color: var(--accent);
 }
 
-.stay-block {
-  background: var(--stay-bg);
-  border-radius: 28px;
-  padding: 2rem 1.5rem !important;
-}
-.stay-options {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.stay {
-  background: white;
-  padding: 1.6rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px var(--shadow);
+/* Блок "На выбор" */
+.choice-title {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  color: var(--accent);
 }
 
+.choice-row {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.choice-option {
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+  border: 2px solid #a8c8e0; /* светло-голубая рамка */
+}
+.choice-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Блоки обедов */
 .meal-block {
   background: var(--meal-bg);
   border-radius: 20px;
@@ -161,6 +181,27 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+/* Блоки ночёвок */
+.stay-block {
+  background: var(--stay-bg);
+  border-radius: 28px;
+  padding: 2rem 1.5rem !important;
+}
+.stay-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.stay {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Карта */
 .map-section {
   text-align: center;
 }
@@ -173,20 +214,10 @@ h2 {
   box-shadow: 0 8px 24px var(--shadow);
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-style: italic;
-  color: #776b62;
-  font-size: 1.1rem;
-  background: var(--card-bg);
-  margin-top: 2rem;
-  border-top: 1px solid #e0e8f0;
-}
-
+/* Кнопки бронирования */
 .booking-btn {
   display: inline-block;
-  background: #3a7ca5;
+  background: var(--accent);
   color: white;
   padding: 0.65rem 1.4rem;
   border-radius: 50px;
@@ -205,95 +236,38 @@ footer {
   transform: translateY(0);
 }
 
-.choice-option {
-  background: var(--card-bg);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px var(--shadow);
-  flex: 1;
-  min-width: 280px;
-  max-width: 480px;
-  border: 2px solid #a8c8e0; /* ← мягкий, светло-голубой оттенок (более бледный, чем --accent) */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.choice-option:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px var(--shadow);
-}
-
-.choice-option img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: cover;
-  display: block;
-}
-.choice-option .place-info {
-  padding: 1.2rem;
-}
-.choice-option h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0.7rem;
-  color: var(--text);
-}
-.choice-option .details {
-  margin-top: 0.6rem;
-  color: var(--accent);
-}
-
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.8rem; }
-  h2 { font-size: 2rem; }
-  .place img { height: 180px; }
-  #map { height: 400px; }
-  .stay-options, .meal-options {
-    gap: 1rem;
-  }
-}
-
-/* Логотип */
-.logo-container {
+/* Футер */
+footer {
   text-align: center;
-  margin-bottom: 1rem;
-}
-.logo {
-  width: 240px;
-  height: auto;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  padding: 2rem;
+  font-style: italic;
+  color: #776b62;
+  font-size: 1.1rem;
+  background: var(--card-bg);
+  margin-top: 2rem;
+  border-top: 1px solid #e0e8f0;
 }
 
-/* Универсальный стиль для всех изображений в карточках */
-.place img,
-.choice-option img,
-.meal img,
-.stay img,
-.logo {
-  width: 100%;
-  height: auto;
-  max-height: 240px;
-  object-fit: cover;
-  display: block;
-  border-radius: 16px 16px 0 0; /* скругление только сверху */
-}
-
-/* Адаптив по высоте для мобилок */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
-  .place img,
-  .choice-option img,
-  .meal img,
-  .stay img,
+  .hero {
+    padding: 1.5rem 1rem 1rem;
+  }
   .logo {
-    max-height: 200px;
+    width: 200px;
+    max-height: 140px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  #map {
+    height: 400px;
+  }
+  .place-image,
+  .choice-image {
+    min-height: 160px;
+  }
+  .choice-row {
+    padding: 0 0.8rem;
   }
 }
