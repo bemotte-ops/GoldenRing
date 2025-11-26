@@ -109,6 +109,7 @@ h2 {
 .place-image,
 .choice-image {
   flex: 0 0 65%;
+  min-height: 300px; 
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -290,5 +291,6 @@ footer {
     font-size: 1.4rem;
   }
 }
+
 
 
