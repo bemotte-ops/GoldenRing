@@ -1,9 +1,31 @@
 :root {
-  --bg: #fdfaf6;
-  --text: #3e2a20;
-  --accent: #c8a985;
-  --card-bg: #fffdf9;
-  --shadow: rgba(0,0,0,0.06);
+  --bg: #fcfdfd; /* нежный бело-голубой фон страницы */
+  --text: #3a353d;
+  --accent: #a8c3d9; /* нежно-голубой акцент */
+  --card-bg: #f9fbfc; /* фон карточек */
+  --meal-bg: #f0f6fa; /* фон обедов */
+  --stay-bg: #f2f5f9; /* фон ночёвок */
+  --shadow: rgba(80, 100, 130, 0.06); /* тень с лёгкой синевой */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-weight: 400;
+  padding-bottom: 2rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }
 
 .hero {
@@ -12,7 +34,7 @@
   padding: 4rem 1.5rem 3rem;
   overflow: hidden;
   color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 .hero-bg {
   position: absolute;
@@ -30,31 +52,6 @@
   margin: 0;
   position: relative;
   z-index: 2;
-}
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.8;
-  font-weight: 400;
-  padding-bottom: 2rem;
-}
-
-h1, h2, h3 {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-}
-
-.hero {
-  background: linear-gradient(135deg, #e8d9c9, #f9f2e8);
-  color: #4a3a2a;
-  text-align: center;
-  padding: 3.5rem 1.5rem 2.5rem;
-}
-.hero h1 {
-  font-size: 4rem;
-  letter-spacing: 1px;
 }
 
 .intro {
@@ -87,7 +84,11 @@ h2 {
   margin: 1rem 0;
 }
 
-.place, .stay {
+.day-block {
+  /* фон по умолчанию — светлый */
+}
+
+.place {
   background: var(--card-bg);
   border-radius: 24px;
   overflow: hidden;
@@ -114,7 +115,7 @@ h2 {
 }
 
 .stay-block {
-  background: #f8f3ed;
+  background: var(--stay-bg);
   border-radius: 28px;
   padding: 2rem 1.5rem !important;
 }
@@ -130,6 +131,28 @@ h2 {
   padding: 1.6rem;
   border-radius: 20px;
   box-shadow: 0 4px 12px var(--shadow);
+}
+
+.meal-block {
+  background: var(--meal-bg);
+  border-radius: 20px;
+  padding: 1.6rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.meal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.meal h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-family: 'Dancing Script', cursive;
+}
+.meal p {
+  margin-bottom: 0.5rem;
 }
 
 .map-section {
@@ -152,29 +175,7 @@ footer {
   font-size: 1.1rem;
   background: var(--card-bg);
   margin-top: 2rem;
-  border-top: 1px solid #f0e8e0;
-}
-
-.meal-block {
-  background: #f9f4ee;
-  border-radius: 20px;
-  padding: 1.6rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 12px var(--shadow);
-}
-.meal-options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.meal h4 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-  font-family: 'Dancing Script', cursive;
-}
-.meal p {
-  margin-bottom: 0.5rem;
+  border-top: 1px solid #e8eef2;
 }
 
 @media (max-width: 768px) {
@@ -182,6 +183,7 @@ footer {
   h2 { font-size: 2rem; }
   .place img { height: 180px; }
   #map { height: 400px; }
+  .stay-options, .meal-options {
+    gap: 1rem;
+  }
 }
-
-
