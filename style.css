@@ -227,6 +227,12 @@ footer {
   flex: 1;
   min-width: 280px;
   max-width: 480px;
+  border: 2px solid var(--accent); /* ← сине-голубая рамка */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.choice-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px var(--shadow);
 }
 .choice-option img {
   width: 100%;
@@ -277,5 +283,6 @@ footer {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
 
 
