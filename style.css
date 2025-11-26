@@ -1,11 +1,12 @@
 :root {
-  --bg: #f9f7f0;
-  --text: #2c1810;
-  --accent: #b38b59;
-  --church: #5a7d9a;
-  --museum: #a65e4a;
-  --monastery: #5f8c5a;
-  --card-bg: #fff8f0;
+  --bg: #fdf9f5;
+  --text: #3e2723;
+  --accent: #c9a98a;
+  --church: #a8c3d9;
+  --museum: #d4b4a5;
+  --monastery: #b7c9a9;
+  --card-bg: #fffdf9;
+  --shadow: rgba(0,0,0,0.05);
 }
 
 * {
@@ -15,97 +16,99 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .hero {
-  background: linear-gradient(135deg, #2c3e50, #5a7d9a);
-  color: white;
+  background: linear-gradient(135deg, #e0d3c5, #f5e9d8);
+  color: #4a3a2a;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1.5rem 3rem;
 }
 .hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+
+.intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.1rem;
+  color: #5a4a42;
+  text-align: center;
+  line-height: 1.8;
 }
 
 section {
   padding: 2rem 1.5rem;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   color: var(--accent);
-  font-size: 1.8rem;
-}
-
-h3 {
-  margin: 1.5rem 0 1rem;
-  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
 }
 
 .map-container {
   background: var(--card-bg);
-  border-radius: 12px;
-  margin: 2rem 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px var(--shadow);
+  margin: 2.5rem 0;
 }
 #map {
-  height: 400px;
-  border-radius: 8px;
-  z-index: 0;
+  height: 450px;
   width: 100%;
+  border-radius: 16px;
 }
 
-.itinerary .day {
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
+.itinerary .place-card {
   background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 20px;
+  padding: 1.6rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 4px 16px var(--shadow);
+  border-left: 4px solid;
+  transition: transform 0.2s;
 }
+.itinerary .place-card:hover {
+  transform: translateY(-3px);
+}
+.church { border-left-color: var(--church); }
+.museum { border-left-color: var(--museum); }
+.monastery { border-left-color: var(--monastery); }
 
-.places {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+.itinerary h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+  font-size: 1.5rem;
 }
-
-.place {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 8px;
-}
-.place img {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-.church { border-left: 4px solid var(--church); }
-.museum { border-left: 4px solid var(--museum); }
-.monastery { border-left: 4px solid var(--monastery); }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   font-style: italic;
-  color: #555;
+  color: #776b62;
+  font-size: 1rem;
   background: var(--card-bg);
+  margin-top: 2rem;
+  border-top: 1px solid #f0e8e0;
 }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 1.8rem; }
-  .places { gap: 0.8rem; }
+  .hero h1 { font-size: 2.4rem; }
+  #map { height: 350px; }
+  .itinerary h3 { font-size: 1.3rem; }
 }
