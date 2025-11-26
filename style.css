@@ -129,9 +129,32 @@ footer {
   border-top: 1px solid #f0e8e0;
 }
 
+.meal-block {
+  background: #f9f4ee;
+  border-radius: 20px;
+  padding: 1.6rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.meal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.meal h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-family: 'Dancing Script', cursive;
+}
+.meal p {
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.8rem; }
   h2 { font-size: 2rem; }
   .place img { height: 180px; }
   #map { height: 400px; }
 }
+
