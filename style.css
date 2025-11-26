@@ -207,17 +207,26 @@ footer {
 
 .choice-title {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   font-size: 1.8rem;
   color: var(--accent);
+}
+
+.choice-row {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .choice-option {
   background: var(--card-bg);
   border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
   box-shadow: 0 4px 14px var(--shadow);
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
 }
 .choice-option img {
   width: 100%;
@@ -268,4 +277,5 @@ footer {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
 
