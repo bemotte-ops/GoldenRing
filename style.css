@@ -1,38 +1,33 @@
 :root {
-  --bg: #fdf9f5;
-  --text: #3e2723;
-  --accent: #c9a98a;
-  --church: #a8c3d9;
-  --museum: #d4b4a5;
-  --monastery: #b7c9a9;
+  --bg: #fdfaf6;
+  --text: #3e2a20;
+  --accent: #c8a985;
   --card-bg: #fffdf9;
-  --shadow: rgba(0,0,0,0.05);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --shadow: rgba(0,0,0,0.06);
 }
 
 body {
   font-family: 'Quicksand', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.8;
   font-weight: 400;
+  padding-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }
 
 .hero {
-  background: linear-gradient(135deg, #e0d3c5, #f5e9d8);
+  background: linear-gradient(135deg, #e8d9c9, #f9f2e8);
   color: #4a3a2a;
   text-align: center;
-  padding: 4rem 1.5rem 3rem;
+  padding: 3.5rem 1.5rem 2.5rem;
 }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
-  font-weight: 600;
+  font-size: 4rem;
   letter-spacing: 1px;
 }
 
@@ -40,60 +35,87 @@ body {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1.5rem;
-  font-size: 1.1rem;
-  color: #5a4a42;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.9;
+  color: #5a4a42;
 }
 
 section {
-  padding: 2rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 1.8rem;
+  font-size: 2.4rem;
   color: var(--accent);
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
 }
 
-.map-container {
+.schedule, .route-info {
+  text-align: center;
+  font-style: italic;
+  color: #6d5b4a;
+  margin: 1rem 0;
+}
+
+.place, .stay {
   background: var(--card-bg);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 8px 24px var(--shadow);
-  margin: 2.5rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.place img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.place-info {
+  padding: 1.4rem;
+}
+.place-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+.details {
+  margin-top: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.stay-block {
+  background: #f8f3ed;
+  border-radius: 28px;
+  padding: 2rem 1.5rem !important;
+}
+.stay-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.stay {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.map-section {
+  text-align: center;
 }
 #map {
-  height: 450px;
+  height: 500px;
   width: 100%;
-  border-radius: 16px;
-}
-
-.itinerary .place-card {
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 1.6rem;
-  margin-bottom: 1.8rem;
-  box-shadow: 0 4px 16px var(--shadow);
-  border-left: 4px solid;
-  transition: transform 0.2s;
-}
-.itinerary .place-card:hover {
-  transform: translateY(-3px);
-}
-.church { border-left-color: var(--church); }
-.museum { border-left-color: var(--museum); }
-.monastery { border-left-color: var(--monastery); }
-
-.itinerary h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 0.6rem;
-  color: var(--text);
-  font-size: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px var(--shadow);
 }
 
 footer {
@@ -101,14 +123,15 @@ footer {
   padding: 2rem;
   font-style: italic;
   color: #776b62;
-  font-size: 1rem;
+  font-size: 1.1rem;
   background: var(--card-bg);
   margin-top: 2rem;
   border-top: 1px solid #f0e8e0;
 }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.4rem; }
-  #map { height: 350px; }
-  .itinerary h3 { font-size: 1.3rem; }
+  .hero h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+  .place img { height: 180px; }
+  #map { height: 400px; }
 }
