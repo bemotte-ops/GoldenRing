@@ -1,12 +1,12 @@
 :root {
-  --bg: #f0f7fc;               /* нежно-голубой фон страницы */
-  --text: #2a2d3a;             /* тёмно-синий текст */
-  --accent: #3a7ca5;           /* насыщенный сине-голубой акцент */
-  --card-bg: #ffffff;          /* карточки — белые */
-  --meal-bg: #e6f1f8;          /* обеды */
-  --stay-bg: #dbe9f4;          /* ночёвки */
-  --shadow: rgba(58, 124, 165, 0.12); /* тень с синевой */
-  --hero-overlay: rgba(42, 64, 92, 0.55); /* оверлей на фон */
+  --bg: #f0f7fc;
+  --text: #2a2d3a;
+  --accent: #3a7ca5;
+  --card-bg: #ffffff;
+  --meal-bg: #e6f1f8;
+  --stay-bg: #dbe9f4;
+  --shadow: rgba(58, 124, 165, 0.12);
+  --hero-overlay: rgba(42, 64, 92, 0.55);
 }
 
 * {
@@ -29,7 +29,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-/* Hero — только логотип */
+/* Hero — только логотип в оригинальном виде */
 .hero {
   position: relative;
   text-align: center;
@@ -50,11 +50,14 @@ h1, h2, h3, h4 {
 
 .logo-container {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
+
 .logo {
   width: 240px;
   height: auto;
-  max-height: 160px;
+  max-width: 100%;
+  display: inline-block;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
 }
 
@@ -90,7 +93,7 @@ h2 {
   margin: 1rem 0;
 }
 
-/* Универсальная карточка */
+/* Универсальная карточка: 65% картинка / 35% текст */
 .place,
 .choice-option {
   background: white;
@@ -100,12 +103,12 @@ h2 {
   box-shadow: 0 6px 18px var(--shadow);
   display: flex;
   flex-direction: column;
-  height: 400px; /* фиксированная высота для контроля пропорций */
+  min-height: 380px;
 }
 
 .place-image,
 .choice-image {
-  height: 80%; /* ← 80% под изображение */
+  flex: 0 0 65%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,20 +116,22 @@ h2 {
 
 .place-info,
 .choice-info {
-  height: 20%; /* ← 20% под текст */
-  padding: 1rem 1.4rem;
-  overflow-y: auto; /* если текст не влезает */
+  flex: 0 0 35%;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .place h3,
 .choice-option h4 {
   font-size: 1.6rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   color: var(--text);
 }
 
 .details {
-  margin-top: 0.8rem;
+  margin-top: auto;
   font-weight: 600;
   color: var(--accent);
 }
@@ -151,7 +156,7 @@ h2 {
   flex: 1;
   min-width: 280px;
   max-width: 480px;
-  border: 2px solid #a8c8e0; /* светло-голубая рамка */
+  border: 2px solid #a8c8e0;
 }
 .choice-option:hover {
   transform: translateY(-3px);
@@ -159,7 +164,7 @@ h2 {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Блоки обедов */
+/* Обеды */
 .meal-block {
   background: var(--meal-bg);
   border-radius: 20px;
@@ -182,7 +187,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Блоки ночёвок */
+/* Ночёвки */
 .stay-block {
   background: var(--stay-bg);
   border-radius: 28px;
@@ -249,6 +254,7 @@ footer {
   border-top: 1px solid #e0e8f0;
 }
 
+/* Мобильная адаптация */
 @media (max-width: 768px) {
   .hero {
     padding: 1.5rem 1rem 1rem;
@@ -266,17 +272,16 @@ footer {
   /* Адаптация карточек */
   .place,
   .choice-option {
-    height: 360px;
+    min-height: 340px;
   }
   .place-image,
   .choice-image {
-    height: 75%;
+    flex: 0 0 60%;
   }
   .place-info,
   .choice-info {
-    height: 25%;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.95rem;
+    flex: 0 0 40%;
+    padding: 1rem 1.2rem;
   }
   .place h3,
   .choice-option h4 {
