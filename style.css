@@ -193,3 +193,52 @@ footer {
     gap: 1rem;
   }
 }
+
+/* Логотип */
+.logo-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.logo {
+  width: 240px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Золотой заголовок */
+.golden-title {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #ffd700;
+  text-shadow: 
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 15px #ffd700,
+    0 0 20px #ff8d00,
+    0 0 25px #ff8d00,
+    0 0 30px #ff8d00;
+  animation: glow 2s ease-in-out infinite alternate;
+  font-family: 'Dancing Script', cursive;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #ffd700,
+      0 0 10px #ffd700,
+      0 0 15px #ffd700,
+      0 0 20px #ff8d00,
+      0 0 25px #ff8d00,
+      0 0 30px #ff8d00;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #ffd700,
+      0 0 20px #ffd700,
+      0 0 30px #ffd700,
+      0 0 40px #ff8d00,
+      0 0 50px #ff8d00,
+      0 0 60px #ff8d00;
+  }
+}
