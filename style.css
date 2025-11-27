@@ -257,41 +257,69 @@ footer {
   border-top: 1px solid #e0e8f0;
 }
 
+.budget-block {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.budget-items {
+  display: grid;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.budget-item {
+  background: var(--meal-bg);
+  padding: 1.2rem;
+  border-radius: 16px;
+}
+.budget-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.budget-item p {
+  margin-bottom: 0.4rem;
+}
+
+.total {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+}
+.total span {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-  .hero {
-    padding: 1.5rem 1rem 1rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  #map {
-    height: 400px;
-  }
-  .choice-row {
-    padding: 0 0.8rem;
-  }
-
-  /* Адаптация карточек */
   .place,
   .choice-option {
-    min-height: 340px;
+    min-height: 320px;
   }
   .place-image,
   .choice-image {
     flex: 0 0 60%;
-    min-height: 200px;
+    min-height: 180px;
+    padding: 0.8rem;
   }
   .place-info,
   .choice-info {
     flex: 0 0 40%;
     padding: 1rem 1.2rem;
+    font-size: 0.95rem;
   }
   .place h3,
   .choice-option h4 {
     font-size: 1.4rem;
   }
 }
+
 
 
 
