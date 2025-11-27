@@ -93,7 +93,7 @@ h2 {
   margin: 1rem 0;
 }
 
-/* Универсальная карточка: 65% картинка / 35% текст */
+/* Универсальная карточка: фикс. высота изображения + гибкий текст */
 .place,
 .choice-option {
   background: white;
@@ -103,27 +103,22 @@ h2 {
   box-shadow: 0 6px 18px var(--shadow);
   display: flex;
   flex-direction: column;
-  min-height: 380px;
 }
 
 .place-image,
 .choice-image {
-  flex: 0 0 65%;
-  min-height: 300px; 
+  flex: 0 0 300px; /* фиксированная высота изображения */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f0f7fc;
-  padding: 1rem; /* ← добавьте отступы */
+  padding: 1rem;
 }
 
 .place-info,
 .choice-info {
-  flex: 0 0 35%;
   padding: 1.2rem 1.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* текст занимает столько места, сколько нужно — без обрезки */
 }
 
 .place h3,
@@ -134,7 +129,7 @@ h2 {
 }
 
 .details {
-  margin-top: auto;
+  margin-top: 0.8rem;
   font-weight: 600;
   color: var(--accent);
 }
@@ -210,6 +205,44 @@ h2 {
   box-shadow: 0 4px 12px var(--shadow);
 }
 
+/* Бюджет */
+.budget-block {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.budget-items {
+  display: grid;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.budget-item {
+  background: var(--meal-bg);
+  padding: 1.2rem;
+  border-radius: 16px;
+}
+.budget-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.budget-item p {
+  margin-bottom: 0.4rem;
+}
+.total {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+}
+.total span {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
 /* Карта */
 .map-section {
   text-align: center;
@@ -257,60 +290,28 @@ footer {
   border-top: 1px solid #e0e8f0;
 }
 
-.budget-block {
-  background: var(--card-bg);
-  border-radius: 24px;
-  padding: 2rem 1.5rem;
-  margin: 2.5rem auto;
-  max-width: 900px;
-  box-shadow: 0 6px 18px var(--shadow);
-}
-
-.budget-items {
-  display: grid;
-  gap: 1.2rem;
-  margin: 1.5rem 0;
-}
-.budget-item {
-  background: var(--meal-bg);
-  padding: 1.2rem;
-  border-radius: 16px;
-}
-.budget-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-}
-.budget-item p {
-  margin-bottom: 0.4rem;
-}
-
-.total {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 1.4rem;
-}
-.total span {
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 1.6rem;
-}
-
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-  .place,
-  .choice-option {
-    min-height: 320px;
+  .hero {
+    padding: 1.5rem 1rem 1rem;
   }
+  h2 {
+    font-size: 2rem;
+  }
+  #map {
+    height: 400px;
+  }
+  .choice-row {
+    padding: 0 0.8rem;
+  }
+
+  /* Адаптация карточек */
   .place-image,
   .choice-image {
-    flex: 0 0 60%;
-    min-height: 180px;
-    padding: 0.8rem;
+    flex: 0 0 240px; /* меньше на мобилках */
   }
   .place-info,
   .choice-info {
-    flex: 0 0 40%;
     padding: 1rem 1.2rem;
     font-size: 0.95rem;
   }
@@ -318,9 +319,11 @@ footer {
   .choice-option h4 {
     font-size: 1.4rem;
   }
+
+  .budget-item h3 {
+    font-size: 1.3rem;
+  }
+  .total span {
+    font-size: 1.4rem;
+  }
 }
-
-
-
-
-
