@@ -280,6 +280,7 @@ footer {
   .place-image,
   .choice-image {
     flex: 0 0 60%;
+    min-height: 200px;
   }
   .place-info,
   .choice-info {
@@ -291,6 +292,7 @@ footer {
     font-size: 1.4rem;
   }
 }
+
 
 
 
